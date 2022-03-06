@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gsheeets Call - Smart Way to Make Phone Numbers Clickable in Google Sheets</title>
+    <meta name="author" content="Gsheeets - gsheeets.github.io">
+    <meta name="description" content="Smart Way to Make Phone Numbers Clickable in Google Sheets">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<p>Redirection to <code>tel:<span id="phone"></span></code></p>
+<script>
+    let phone = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+    if (phone.length) {
+        document.getElementById('phone').innerHTML = phone;
+        window.location.href = "tel:" + phone;
+    }
+</script>
+</body>
+</html>
